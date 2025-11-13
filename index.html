@@ -48,9 +48,19 @@
     /* Side Nav */
     #sideNav {
       background: linear-gradient(180deg, #0f172a 0%, #18253f 55%, var(--accent) 140%);
-      min-height: 100vh;
+      /* 移除了这里的 min-height: 100vh; */
     }
-    #sideNav .navbar-brand { font-family: "Saira Extra Condensed", Inter, sans-serif; letter-spacing: 1px; }
+
+    @media (min-width: 992px) {
+      #sideNav {
+        width: 270px;
+        min-height: 100vh; /* 只在桌面端才撑满整高做侧栏 */
+      }
+      .content-wrapper {
+        margin-left: 270px;
+        padding-top: 40px;
+      }
+    }
 
     .img-profile {
       width: 180px; height: 180px; object-fit: cover; border: 3px solid rgba(255,255,255,.25);
